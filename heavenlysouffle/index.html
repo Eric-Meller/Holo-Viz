@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Heavenly Soufflé — Gourmet Desserts, Ready in Minutes</title>
+  <meta name="description" content="All–natural gourmet desserts in individual ceramic ramekins. Open, bake & serve in minutes. Chocolate, Mint Chocolate, Pumpkin, Crème Brûlée." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#hero" aria-label="Heavenly Soufflé home">
+        <img src="./assets/media/heavenly-souffle-enhanced.png" alt="Heavenly Soufflé logo" class="brand-logo" />
+        <img src="./assets/media/rwdelights_logo_transparent.png" alt="RW Delights logo" class="brand-logo rw" />
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars hamburger-icon-fa"></i>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+          <li><a href="#private-label">Private Label</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Enjoy delicious desserts in under 20 minutes</h1>
+        <p>Restaurant–quality, all–natural individual desserts in ceramic ramekins. Open, bake & serve.</p>
+        <div class="cta">
+          <a href="#products" class="btn primary">Explore Products</a>
+          <a href="#find-us" class="btn ghost">Where to Buy</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <video class="hero-video" autoplay loop muted playsinline>
+          <source src="./assets/media/iStock-1262822724.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-img" style="background-image:url('./assets/media/Chocolate box front small - final.png')"></div>
+          <h3>Chocolate Soufflé</h3>
+          <p>Rich, decadent chocolate made with premium cocoa.</p>
+          <span class="chip">Gluten‑Free</span>
+        </article>
+        <article class="product-card">
+          <div class="product-img" style="background-image:url('./assets/media/Mint box front small - final.png')"></div>
+          <h3>Mint Chocolate Soufflé</h3>
+          <p>Refreshing mint paired with luscious chocolate.</p>
+          <span class="chip">Gluten‑Free</span>
+        </article>
+        <article class="product-card">
+          <div class="product-img" style="background-image:url('./assets/media/Pumpkin box front small - final.png')"></div>
+          <h3>Pumpkin Soufflé</h3>
+          <p>Seasonal favorite with warm pumpkin spice.</p>
+        </article>
+        <article class="product-card">
+          <div class="product-img" style="background-image:url('./assets/media/Creme Brulee box front small - final.png')"></div>
+          <h3>Crème Brûlée Soufflé</h3>
+          <p>Classic custard with a caramelized finish.</p>
+          <span class="chip">Gluten‑Free</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section alt">
+    <div class="container about">
+      <div class="about-copy">
+        <h2>About Us</h2>
+        <p>Heavenly Soufflé was founded by two passionate pastry chefs who believe everyone deserves a moment of indulgence at home.</p>
+        <p>We use all–natural ingredients, flash–freeze at the peak of perfection, and design each dessert to be ready in minutes.</p>
+      </div>
+      <div class="about-media">
+        <img src="./assets/media/twochefs.jpg" alt="Our founders" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Find Us -->
+  <section id="find-us" class="section">
+    <div class="container">
+      <h2>Find Us</h2>
+      <div class="locator">
+        <div id="map"></div>
+        <aside class="locator-aside">
+          <form id="zip-search-form" class="zip-form" autocomplete="off">
+            <label for="zip-code">Find nearest store</label>
+            <div class="zip-row">
+              <input id="zip-code" name="zip" inputmode="numeric" maxlength="5" pattern="\d{5}" placeholder="Enter ZIP" />
+              <button type="submit" class="btn primary">Search</button>
+            </div>
+            <div id="search-results"></div>
+          </form>
+          <div class="store-list"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Private Label -->
+  <section id="private-label" class="section alt">
+    <div class="container">
+      <h2>Private Label</h2>
+      <div class="private-label">
+        <div class="pl-copy">
+          <p>RW Delights' private label program builds customer loyalty with all–natural, individual desserts under your brand. Products ship frozen in 4 oz ceramic ramekins and are designed to Open, Bake & Serve.</p>
+          <p>We can collaborate on packaging to fit your needs. Current offerings include soufflés (chocolate, chocolate mint, pumpkin, crème brûlée) and personal cheesecakes in assorted flavors.</p>
+          <p>For details, email <a href="mailto:info@heavenlysouffle.com">info@heavenlysouffle.com</a> or call Roxanne Kam 718‑683‑1038.</p>
+        </div>
+        <div class="pl-gallery">
+          <img src="./assets/media/Chocolate box front small - final.png" alt="Chocolate Soufflé box" />
+          <img src="./assets/media/Mint box front small - final.png" alt="Mint Chocolate Soufflé box" />
+          <img src="./assets/media/Pumpkin box front small - final.png" alt="Pumpkin Soufflé box" />
+          <img src="./assets/media/Creme Brulee box front small - final.png" alt="Crème Brûlée box" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <div class="testimonials-grid">
+        <figure class="testimonial">
+          <blockquote>“Thanks, they are really fantastic, and I cook!”</blockquote>
+          <figcaption>
+            <div class="name">Katherine Burke</div>
+            <div class="meta">New York City, NY</div>
+          </figcaption>
+        </figure>
+        <figure class="testimonial">
+          <blockquote>“My soon‑to‑be six year old doesn't want a cake — only chocolate soufflé for his birthday.”</blockquote>
+          <figcaption>
+            <div class="name">Cathi</div>
+            <div class="meta">Towson, MD</div>
+          </figcaption>
+        </figure>
+        <figure class="testimonial">
+          <blockquote>“I had a huge craving for chocolate soufflé… my husband and I loved it so much that I ordered 10 more for my family.”</blockquote>
+          <figcaption>
+            <div class="name">P.A.</div>
+            <div class="meta">New York City, NY</div>
+          </figcaption>
+        </figure>
+        <figure class="testimonial">
+          <blockquote>“We received our soufflés in time for our party and they were a huge hit… thanks for a great product!”</blockquote>
+          <figcaption>
+            <div class="name">Dave Bryant</div>
+            <div class="meta">Palos Verdes Estates, CA</div>
+          </figcaption>
+        </figure>
+        <figure class="testimonial">
+          <blockquote>“Delicious, delightful, intense, fluffy, perfect!”</blockquote>
+          <figcaption>
+            <div class="name">Katherine Gregory</div>
+            <div class="meta">Founder/Director, Mi Kitchen es su Kitchen</div>
+          </figcaption>
+        </figure>
+        <figure class="testimonial">
+          <blockquote>“The soufflé was beyond good, it was great.”</blockquote>
+          <figcaption>
+            <div class="name">Peter Brennan</div>
+            <div class="meta">President, Daymon Worldwide Inc.</div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section alt">
+    <div class="container faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-columns">
+        <div class="faq-col">
+          <p>If you have a distributor in your area please contact us at <a href="mailto:info@heavenlysouffle.com">info@heavenlysouffle.com</a> or 866‑892‑1096 and we will work with them directly to bring our product to your area.</p>
+          <p>For private label, please contact us directly at <a href="mailto:info@heavenlysouffle.com">info@heavenlysouffle.com</a> or 866‑892‑1096.</p>
+          <h3>How should I store the soufflés and crème brûlée?</h3>
+          <p>Place soufflés and crème brûlée in your freezer immediately.</p>
+          <h3>How long will they last in my freezer?</h3>
+          <p>Please refer to the Best Used by date on the box. Frozen soufflés and crème brûlée last up to 12 months.</p>
+          <h3>Can I refreeze after thawing?</h3>
+          <p>No. Once thawed, prepare and eat immediately or store in your refrigerator.</p>
+        </div>
+        <div class="faq-col">
+          <h3>Refrigeration</h3>
+          <p>Thawed soufflés and crème brûlée can be refrigerated up to 3 days.</p>
+          <h3>Leftover soufflés</h3>
+          <p>Wrap baked soufflés and refrigerate. Reheat in microwave 30s. They won't rise again, but taste remains great.</p>
+          <h3>Serving suggestions</h3>
+          <p>Serve with ice cream, whipped cream, powdered sugar, and berries. Open the center and add warm chocolate sauce or crème anglaise.</p>
+          <h3>Are your products natural?</h3>
+          <p>All–natural, trans fat free, no artificial colors or flavors.</p>
+        </div>
+        <div class="faq-col">
+          <h3>Shipping</h3>
+          <p>Orders ship ground from New Jersey packed with dry ice. For 2‑day or overnight pricing, email <a href="mailto:info@heavenlysouffle.com">info@heavenlysouffle.com</a>. We do not ship June–August.</p>
+          <p>For special orders, email <a href="mailto:info@heavenlysouffle.com">info@heavenlysouffle.com</a> or call 866‑892‑1096.</p>
+          <h3>Bulk orders</h3>
+          <p>Bulk discounts for 15+ units. <a href="#contact">Contact us</a> for pricing.</p>
+          <h3>Baking Instructions</h3>
+          <p><strong>Chocolate & Chocolate Mint:</strong> 375°F. From frozen: 22–24m. Thawed: 18–20m.</p>
+          <p><strong>Pumpkin:</strong> 400°F. From frozen: 22–24m. Thawed: 18–22m.</p>
+          <p><strong>Crème Brûlée:</strong> Broil 3–5m until golden; rest to harden. From thawed: broil 3–5m; rest 3–6m.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Heavenly <span>Soufflé</span></h3>
+        <p>Gourmet desserts made simple.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+          <li><a href="#private-label">Private Label</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:info@heavenlysouffle.com">info@heavenlysouffle.com</a></p>
+        <p>Phone: 866‑892‑1096</p>
+        <p>New Jersey, USA</p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Heavenly Soufflé. All rights reserved.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="./assets/js/store-locations.js"></script>
+  <script src="./assets/js/map.js"></script>
+  <script src="./assets/js/mobile-menu.js"></script>
+</body>
+</html>
